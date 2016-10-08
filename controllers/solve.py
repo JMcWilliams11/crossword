@@ -9,7 +9,14 @@ def solve_route():
     #puzzleUrl = new york times crossword puzzle url
     puzzleUrl = request.form['url']
     req = requests.get(puzzleUrl)
-    if req.status_code == requests.codes.ok:
+    if req.status_code == requests.codes.ok :
+        goodUrl = True
+        puzzleSoup = bs4.BeautifulSoup(goodUrl)
+        grid = puzzleSoup.select('.flex-row')
+        options = {
+            'goodUrl': goodUrl,
+            'result': grid
+        }
 
     else :
         goodUrl = False
@@ -17,9 +24,4 @@ def solve_route():
             'goodUrl': goodUrl
         }
 
-    #change this
-    result = 'null'
-    options = {
-        'result': result
-    }
     return render_template("solve.html", **options)
