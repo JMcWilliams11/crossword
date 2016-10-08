@@ -12,14 +12,17 @@
 <form action="{{ url_for("solve.solve_route") }}" method="POST">
 <div>
 <label id="enter-label">Enter Crossword URL Here:</label>
-<input id="tbox" type="text" name="url"/>
-    {% if goodUrl == False %}
-<p id="error">ERROR: Invalid URL</p>
-{% endif %}
+<input id="tbox" type="text" name="url" value=""/>
+
 
 </div>
 <div>
-    <input type="submit" id="btnSolve" class="myButton"/>
+    <input type="submit"  id="btnSolve" class="myButton"/>
+    {% if goodUrl == False %}
+<div id="error">
+   Please enter a valid url
+</div>
+{% endif %}
 </div>
 </form>
 
@@ -27,3 +30,4 @@
 <div id="tm">J&M Inc.&trade;</div>
 </body>
 </html>
+

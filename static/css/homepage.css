@@ -1,16 +1,19 @@
-    body{
+
+body{
         background: url("../images/HP_paper.gif");
         background-size: 80px 60px;
+
+    }
+
+
+
+#enter-label{
         font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
 	    font-size: 40px;
 	    font-style: normal;
 	    font-variant: normal;
 	    font-weight: 500;
 	    line-height: 26.4px;
-    }
-
-
-    #enter-label{
         position: absolute;
         top: 40%;
         left: 50%;
@@ -18,7 +21,8 @@
     }
 
 
-    #btnSolve {
+
+#btnSolve {
         position: absolute;
         top: 60%;
         left: 50%;
@@ -96,9 +100,12 @@
         font-size: 8px;
     }
 
-    #error{
-        color: red;
-    }
+#error {
+    color: #D8000C;
+
+}
+
+
 
 
 
