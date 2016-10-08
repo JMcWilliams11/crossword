@@ -6,6 +6,7 @@ app = Flask(__name__, template_folder='templates')
 
 # Register the controllers
 app.register_blueprint(controllers.main)
+app.register_blueprint(controllers.solve)
 
 #### Global Constants
 # UPLOAD_FOLDER = '/static/images/images'
