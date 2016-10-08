@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <title>Crossword Solver 5000</title>
     <link rel="stylesheet" type="text/css" href="../static/css/homepage.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/homepage.js"></script>
 </head>
 
-<body>
+<body id="page">
+<form action="{{ url_for("solve.solve_route") }}" method="POST">
 <div>
 <label id="enter-label">Enter Crossword URL Here:</label>
-<input id="tbox" type="text"/>
+<input id="tbox" type="text" name="url"/>
 
 </div>
 <div>
-    <button id="btnSolve" class="myButton">Solve</button>
+    <input type="submit" id="btnSolve" class="myButton">Solve</input>
 </div>
+</form>
 
 <div id="tm">J&M Inc.&trade;</div>
 </body>
