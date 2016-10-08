@@ -11,12 +11,13 @@ def solve_route():
     req = requests.get(puzzleUrl)
     if req.status_code == requests.codes.ok :
         goodUrl = True
-        puzzleSoup = bs4.BeautifulSoup(goodUrl)
+        puzzleSoup = bs4.BeautifulSoup(req.text)
         grid = puzzleSoup.select('.flex-row')
         options = {
             'goodUrl': goodUrl,
             'result': grid
         }
+        print grid
 
     else :
         goodUrl = False
