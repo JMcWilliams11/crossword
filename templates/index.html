@@ -13,15 +13,16 @@
 <div>
 <label id="enter-label">Enter Crossword URL Here:</label>
 <input id="tbox" type="text" name="url"/>
+    {% if goodUrl == False %}
+<p id="error">ERROR: Invalid URL</p>
+{% endif %}
 
 </div>
 <div>
-    <input type="submit" id="btnSolve" class="myButton"></input>
+    <input type="submit" id="btnSolve" class="myButton"/>
 </div>
 </form>
-{% if goodUrl %}
 
-{% endif %}
 
 <div id="tm">J&M Inc.&trade;</div>
 </body>
