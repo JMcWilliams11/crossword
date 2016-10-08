@@ -10,19 +10,18 @@ def solve_route():
     puzzleUrl = request.form['url']
     req = requests.get(puzzleUrl)
     if req.status_code == requests.codes.ok :
-        goodUrl = True
         puzzleSoup = bs4.BeautifulSoup(req.text)
         grid = puzzleSoup.select('.flex-row')
+        cluelist = puzzleSoup.select('.clue-list-wrapper')
         options = {
-            'goodUrl': goodUrl,
             'result': grid
         }
         print grid
 
     else :
-        goodUrl = False
         options = {
-            'goodUrl': goodUrl
+            'goodUrl': False
         }
+        return render_template("index.html", **options)
 
     return render_template("solve.html", **options)
